@@ -1,5 +1,5 @@
 /* ===========================
-   VARIÁVEIS (CORES LUXO)
+   VARIÁVEIS (CORES)
 =========================== */
 
 :root {
@@ -26,10 +26,11 @@
 
 body {
     background-color: var(--cor-fundo);
-    font-family: "Poppins", sans-serif;
     color: var(--cor-principal);
-    padding-top: 90px;
+
+    font-family: "Poppins", sans-serif;
     text-align: center;
+    padding-top: 90px;
 }
 
 /* ===========================
@@ -37,19 +38,25 @@ body {
 =========================== */
 
 .container {
-    max-width: 1100px;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 /* ===========================
    TIPOGRAFIA
 =========================== */
 
-h1, h2, h3 {
+/* Títulos */
+
+h1,
+h2,
+h3 {
     font-family: "Playfair Display", serif;
     font-weight: 400;
 }
+
+/* Título Principal */
 
 h1 {
     font-size: 64px;
@@ -57,10 +64,14 @@ h1 {
     margin-bottom: 15px;
 }
 
+/* Títulos Secundários */
+
 h2 {
     font-size: 34px;
     margin-bottom: 15px;
 }
+
+/* Parágrafos */
 
 p {
     font-size: 16px;
@@ -77,6 +88,7 @@ a {
     color: inherit;
 }
 
+
 /* ===========================
    BOTÕES
 =========================== */
@@ -92,6 +104,8 @@ button,
     cursor: pointer;
     transition: 0.3s ease;
 }
+
+/* Efeito ao passar o mouse */
 
 button:hover,
 .botao-principal:hover {
@@ -116,14 +130,19 @@ button:hover,
 
     background: rgba(247, 244, 239, 0.75);
     backdrop-filter: blur(14px);
+
     z-index: 9999;
 }
+
+/* Logo */
 
 .logo {
     font-family: "Playfair Display", serif;
     font-size: 18px;
     letter-spacing: 4px;
 }
+
+/* Links do menu */
 
 .topbar .links {
     display: flex;
@@ -136,8 +155,9 @@ button:hover,
     text-transform: uppercase;
 }
 
+
 /* ===========================
-   HERO (SEM OVERFLOW)
+   HERO
 =========================== */
 
 .hero {
@@ -149,10 +169,14 @@ button:hover,
     padding: 60px 0;
 }
 
+/* Texto do Hero */
+
 .hero-texto {
     flex: 1;
     text-align: left;
 }
+
+/* Imagem do Hero */
 
 .hero-imagem {
     flex: 1;
@@ -163,6 +187,7 @@ button:hover,
 .hero-imagem img {
     width: 100%;
     max-width: 450px;
+    height: auto;
 }
 
 /* ===========================
@@ -171,6 +196,12 @@ button:hover,
 
 .categorias {
     margin-top: 80px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 20px;
 }
 
 .categorias-grid {
@@ -185,44 +216,60 @@ button:hover,
 
 .grid {
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
+
     align-items: stretch;
 }
 
 /* ===========================
-   CARD PADRONIZADO (CORRIGIDO)
+   CARDS
 =========================== */
 
 .card {
     background: var(--cor-branco);
+
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 15px;
 
     padding: 18px;
-
     display: flex;
     flex-direction: column;
-
     height: 100%;
 }
 
-/* hover */
+/* Efeito ao passar o mouse */
+
 .card:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
-/* imagem uniforme */
+
+/* Imagem dos produtos */
+
 .card img {
     width: 100%;
     height: 210px;
+
     object-fit: cover;
+
     border-radius: 12px;
     margin-bottom: 12px;
 }
 
-/* texto */
+
+/* Ajuste geral das imagens */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Textos dos cards */
+
 .card h2 {
     font-size: 18px;
     margin: 8px 0;
@@ -233,7 +280,9 @@ button:hover,
     margin: 3px 0;
 }
 
-/* botão sempre embaixo */
+
+/* Botão sempre no final */
+
 .card a {
     margin-top: auto;
 }
@@ -244,20 +293,25 @@ button:hover,
 }
 
 /* ===========================
-   MENU CATEGORIAS
+   MENU DE CATEGORIAS
 =========================== */
 
 .menu-categorias {
     display: flex;
     justify-content: center;
+
     gap: 12px;
     margin: 30px 0;
+
     flex-wrap: wrap;
 }
+
+/* Botões das categorias */
 
 .menu-categorias a {
     background: var(--cor-principal);
     color: white;
+
     padding: 10px 18px;
     font-size: 13px;
 }
@@ -271,10 +325,169 @@ section {
     scroll-margin-top: 120px;
 }
 
+/* Controle de exibição */
+
 .escondido {
     display: none;
 }
 
 .visivel {
     display: block;
+}
+
+/* ===========================
+   RESPONSIVIDADE (TABLET)
+=========================== */
+
+@media (max-width: 1024px) {
+
+    /* Tipografia */
+
+    h1 {
+        font-size: 52px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    /* Hero */
+
+    .hero {
+        gap: 40px;
+    }
+
+    .hero-imagem img {
+        max-width: 380px;
+    }
+
+    /* Cards */
+
+    .card img {
+        height: 200px;
+    }
+
+}
+
+/* ===========================
+   RESPONSIVIDADE (CELULAR)
+=========================== */
+
+@media (max-width: 768px) {
+
+
+    /* ===========================
+       TIPOGRAFIA
+    =========================== */
+
+    h1 {
+        font-size: 38px;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+
+    /* ===========================
+       TOPBAR
+    =========================== */
+
+    .logo {
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    .topbar {
+        padding: 18px 20px;
+    }
+
+    .topbar .links {
+        gap: 12px;
+    }
+
+    .topbar .links a {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    /* ===========================
+       HERO
+    =========================== */
+
+    .hero {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .hero-texto {
+        text-align: center;
+    }
+
+    .hero-imagem img {
+        max-width: 300px;
+    }
+
+    /* ===========================
+       CATEGORIAS
+    =========================== */
+
+    .categorias {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ===========================
+       GRID E CARDS
+    =========================== */
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .card img {
+        height: 180px;
+    }
+
+    .card h2 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    /* ===========================
+       BOTÕES
+    =========================== */
+
+    button,
+    .botao-principal {
+        font-size: 13px;
+        padding: 12px 22px;
+    }
+
+    /* ===========================
+       MENU DE CATEGORIAS
+    =========================== */
+
+    .menu-categorias a {
+        font-size: 12px;
+        padding: 9px 15px;
+    }
 }
