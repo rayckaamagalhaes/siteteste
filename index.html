@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>GUIA DE PRESENTES</title>
 
     <link rel="stylesheet" href="style.css">
@@ -12,7 +16,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
 <!-- ================= TOPBAR ================= -->
@@ -27,7 +30,6 @@
         <a href="Cabelo.html">Cabelo</a>
         <a href="skincare.html">Skincare</a>
     </div>
-
 </nav>
 
 
@@ -44,17 +46,15 @@
             Criei este espaço para reunir ideias de presentes que uma mulher gostaria de ganhar, abrangendo diferentes contextos e necessidades. Sinta-se a vontade para explorar quando lhe faltar criatividade! (site em desenvolvimento)
         </p>
 
-        <button class="botao-principal" onclick="window.location.href='index.html#categorias'">
-                Explorar coleção
+        <button class="botao-principal" onclick="mostrarCategorias()">
+          Explorar coleção
         </button>
-
     </div>
-
 </section>
 
 
 <!-- ================= CATEGORIAS ================= -->
-<section id="categorias" class="categorias container">
+<section id="categorias" class="categorias container escondido">
 
     <h2>Escolha uma categoria</h2>
  
@@ -87,10 +87,23 @@
         <a href="#" class="categoria-card">
              <h3>Roupas</h3>
         </a>
-
     </div>
-
 </section>
+
+<script>
+
+function mostrarCategorias() {
+    const hero = document.getElementById("hero");
+    const categorias = document.getElementById("categorias");
+    hero.style.display = "none";
+    categorias.classList.remove("escondido");
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
 
 </body>
 </html>
